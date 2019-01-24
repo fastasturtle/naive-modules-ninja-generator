@@ -16,7 +16,8 @@ class NinjaFile:
         self.rules.append("  command = {}\n\n".format(command))
 
     def add_build_edge(self, rule, input, output, deps):
-        self.build_edges.append("build {}: {} {} {}\n".format(output, rule, input, "| " + " ".join(deps) if deps else ""))
+        self.build_edges.append(
+            "build {}: {} {} {}\n".format(output, rule, input, "| " + " ".join(deps) if deps else ""))
 
     def write_to(self, filename):
         with open(filename, 'w+') as f:
@@ -97,7 +98,8 @@ Assumptions:
         create_headers(args.headers, args.compiler).write_to(os.path.join(args.headers, 'build.ninja'))
 
     if args.modules:
-        create_modules(args.modules, args.compiler, args.all_artifacts).write_to(os.path.join(args.modules, 'build.ninja'))
+        create_modules(args.modules, args.compiler, args.all_artifacts).write_to(
+            os.path.join(args.modules, 'build.ninja'))
 
 
 if __name__ == '__main__':
