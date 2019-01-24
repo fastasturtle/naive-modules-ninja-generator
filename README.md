@@ -13,6 +13,8 @@ python3 naive-generator.py --headers /path/to/h-and-cpps --modules /path/to/modu
 
 Note that it does very simple module dependency scanning and assumes modules should be searched by name in the current directory.
 
+All produced files are saved to the original directory, `ninja -t clean` should work as expected.
+
 Assumptions:
   - All files are named *.cpp or *.h and are placed in the working directory
   - Module names match header names
