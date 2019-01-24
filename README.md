@@ -11,6 +11,8 @@ Usage example:
 python3 naive-generator.py --headers /path/to/h-and-cpps --modules /path/to/modules --compiler /path/to/clang [--all-artifacts]
 ```
 
+The file `build.ninja` is written to the passed source directory.
+
 Note that it does very simple module dependency scanning and assumes modules should be searched by name in the current directory.
 
 All produced files are saved to the original directory, `ninja -t clean` should work as expected.
